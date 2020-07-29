@@ -1,5 +1,5 @@
 import React from 'react';
-import { Main } from './pages';
+import { Main } from '../pages';
 
 /**
  * in the future we will need some router config, etc.
