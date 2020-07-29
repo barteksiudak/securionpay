@@ -13,6 +13,7 @@ export default function ExpiryDateField({ position }: IExpiryDateField) {
         position={position}
         placeholder={translate('MM / YY')}
         formatValue={formatExpiryDate}
+        onChange={() => {}}
       />
     </div>
   );

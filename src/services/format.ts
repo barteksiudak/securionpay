@@ -1,12 +1,18 @@
-export function formatCardNumber(value: string): string {
+import { MAX_CARD_NUMBER_LENGTH } from '../constants';
+
+export function formatCardNumber(
+  value: string,
+  maxLength: number = MAX_CARD_NUMBER_LENGTH
+): string {
   if (!value) {
     return '';
   }
+
   return value
     .replace(/[^0-9]/g, '')
     .replace(/([0-9]{4})/g, '$1 ')
     .trim()
-    .substr(0, 19);
+    .substr(0, maxLength);
 }
 
 export function formatExpiryDate(value: string): string {

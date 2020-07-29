@@ -14,6 +14,7 @@ export default function CVCField({ position }: ICVCField) {
         position={position}
         placeholder={translate('CVC')}
         formatValue={formatCvc}
+        onChange={() => {}}
       />
     </div>
   );
