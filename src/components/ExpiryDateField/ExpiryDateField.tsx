@@ -1,29 +1,28 @@
 import React, { useState, useCallback, FormEvent } from 'react';
-import { translate, cardNumber as formatCardNumber } from '../../services';
-import './CardNumberField.scss';
+import { translate, expiryDate as formatExpiryDateValue } from '../../services';
 
-interface ICardNumberField {
+interface IExpiryDateField {
   position: number;
 }
 
-export default function CardNumberField({ position }: ICardNumberField) {
+export default function ExpiryDateField({ position }: IExpiryDateField) {
   const [value, setValue] = useState('');
 
   const handleInputChange = useCallback(
     (e: FormEvent<HTMLInputElement>): void => {
       const { value: inputValue } = e.target as HTMLInputElement;
-      setValue(formatCardNumber(inputValue));
+      setValue(formatExpiryDateValue(inputValue));
     },
     []
   );
 
   return (
-    <div className="card-number">
+    <div className="expiry-date">
       <input
-        pattern="[0-9 ]*"
+        pattern="[0-9/ ]*"
         tabIndex={position}
         type="text"
-        placeholder={translate('Card number')}
+        placeholder={translate('MM / YY')}
         value={value}
         onChange={handleInputChange}
       />

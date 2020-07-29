@@ -14,7 +14,7 @@ jest.mock('../../services', () => ({
 }));
 
 describe('CardNumberField', () => {
-  const wrapper = shallow(<CardNumberField />);
+  const wrapper = shallow(<CardNumberField position={1} />);
   const inputElement = wrapper.find('input');
 
   it('should render CardNumberField component', () => {
