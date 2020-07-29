@@ -1,4 +1,4 @@
-export function cardNumber(value: string): string {
+export function formatCardNumber(value: string): string {
   if (!value) {
     return '';
   }
@@ -6,10 +6,10 @@ export function cardNumber(value: string): string {
     .replace(/[^0-9]/g, '')
     .replace(/([0-9]{4})/g, '$1 ')
     .trim()
-    .substring(0, 19);
+    .substr(0, 19);
 }
 
-export function expiryDate(value: string): string {
+export function formatExpiryDate(value: string): string {
   if (!value) {
     return '';
   }
@@ -26,4 +26,12 @@ export function expiryDate(value: string): string {
     .replace('/', '')
     .replace(/([0-9]{2})(.*)/, '$1 / $2')
     .substr(0, 7);
+}
+
+export function formatCvc(value: string): string {
+  if (!value) {
+    return '';
+  }
+
+  return value.replace(/[^0-9]/g, '').substr(0, 3);
 }
