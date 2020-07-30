@@ -12,6 +12,7 @@ export enum CardType {
   VISAELECTRON = 'visaelectron',
   ELO = 'elo',
   VISA = 'visa',
+  UNKNOW = 'unknow',
 }
 
 export interface ICardType {
@@ -23,6 +24,7 @@ export interface ICardType {
 }
 
 export interface IDefaultCardType {
+  type: CardType;
   maxCardNumberLength: number;
   cvcLength: number;
 }

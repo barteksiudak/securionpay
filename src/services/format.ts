@@ -41,3 +41,11 @@ export function formatCvc(value: string): string {
 
   return value.replace(/[^0-9]/g, '').substr(0, 3);
 }
+
+export function addZero(value: number): string {
+  if (value < 2) {
+    return `0${value}`;
+  }
+
+  return String(value);
+}

@@ -4,6 +4,7 @@ export const MAX_CARD_NUMBER_LENGTH = 19;
 export const DEFAULT_CVC_LENGTH: number = 3;
 
 export const DEFAULT_CARD_DATA: IDefaultCardType = {
+  type: CardType.UNKNOW,
   maxCardNumberLength: MAX_CARD_NUMBER_LENGTH,
   cvcLength: DEFAULT_CVC_LENGTH,
 };
